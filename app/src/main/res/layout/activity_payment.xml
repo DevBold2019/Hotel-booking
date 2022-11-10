@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColorOne"
+    tools:context=".PaymentActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/paymentToolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/top_rounded_background"
+        android:padding="8dp"
+        app:title="PAYMENT"
+        app:titleTextColor="@color/white_color"
+        app:navigationIcon="@drawable/back_arrow_drawable"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+     app:layout_constraintBottom_toTopOf="@+id/continueBtn"
+        app:layout_constraintTop_toBottomOf="@id/paymentToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:paddingBottom="10dp"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="6dp"
+                android:id="@+id/toPayCard"
+                app:cardBackgroundColor="@color/backgroundColorOne"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:padding="5dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TO PAY"
+                        android:padding="10dp"
+                        android:id="@+id/toPayTV"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:textColor="@color/white_color"
+                        android:textSize="18sp"
+                        android:layout_margin="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp"
+                        android:padding="1dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="KSH 250"
+                            android:padding="1dp"
+                            android:id="@+id/amountTV"
+                            android:layout_gravity="start"
+                            android:textColor="@color/button_color"
+                            android:textSize="18sp"/>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3 items"
+                            android:padding="6dp"
+                            android:id="@+id/itemsCount"
+                            android:textColor="@color/white_color"
+                            android:textSize="15sp"/>
+
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Payment Method"
+                android:padding="10dp"
+                android:id="@+id/paymentMethodTV"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toPayCard"
+                android:textColor="@color/white_color"
+                android:textSize="18sp"
+                android:layout_margin="10dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/paymentMethodRecycler"
+                app:layout_constraintTop_toBottomOf="@id/paymentMethodTV"
+                android:layout_margin="10dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Card"
+                android:padding="10dp"
+                android:id="@+id/cardTV"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/paymentMethodRecycler"
+                android:textColor="@color/white_color"
+                android:textSize="18sp"
+                android:layout_margin="10dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="6dp"
+                android:id="@+id/bankCard"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="#25263B"
+                app:layout_constraintTop_toBottomOf="@+id/cardTV">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:padding="5dp"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/selectRadio"
+                        android:padding="5dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@color/white_color"
+                        android:src="@drawable/washington"
+                        android:id="@+id/bankImage"
+                        app:layout_constraintLeft_toRightOf="@+id/selectRadio"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp"
+                        android:id="@+id/cvvLayout"
+                        app:layout_constraintLeft_toRightOf="@+id/bankImage"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Wananchi Bank"
+                            android:textSize="16sp"
+                            android:padding="5dp"
+                            android:textColor="@color/white_color"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="****12345"
+                            android:textSize="15sp"
+                            android:padding="5dp"
+                            android:textColor="@color/gray_color"
+                            android:textStyle="normal"/>
+
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:padding="10dp"
+                        android:textSize="18sp"
+                        app:layout_constraintLeft_toRightOf="@+id/cvvLayout"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:background="@drawable/cvv_background"
+                        android:text="CVV"
+                        android:textColor="@color/white_color"/>
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </ScrollView>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:id="@+id/continueBtn"
+        android:textColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/login_button_background"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

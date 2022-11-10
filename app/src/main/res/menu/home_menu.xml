@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    app:iconTint="@color/white_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/mapMenu"
+        android:title="Map"
+        android:icon="@drawable/location_on_drawable"
+        app:showAsAction="always"/>
+
+    <item
+        android:title="Restaurants"
+        app:showAsAction="never"/>
+
+    <item
+        android:title="Hotels"
+        app:showAsAction="never"/>
+
+    <item
+        android:title="Bars"
+        app:showAsAction="never"/>
+
+
+</menu>
